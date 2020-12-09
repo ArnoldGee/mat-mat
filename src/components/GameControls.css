@@ -1,0 +1,20 @@
+.game-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 1rem;
+}
+.game-controls__numbers {
+  font-weight: 600;
+  font-size: 4rem;
+}
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+   .game-controls__numbers {
+     font-size: 2rem;
+   }
+   .game-controls {
+    grid-template-columns:  repeat(auto-fill, minmax(25%, 1fr));
+   }
+}

@@ -1,0 +1,14 @@
+.question-menu {
+  z-index: 2;
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 700px;
+
+  padding: 1rem;
+  background: linear-gradient(45.34deg, #cadefc 5.66%, #d8e1ee 94.35%);
+  border-radius: 30px;
+  border: 10px outset #574f7d;
+}

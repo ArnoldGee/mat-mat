@@ -1,0 +1,9 @@
+.question {
+  font-size: 5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.question .icon {
+  height: 3.5rem;
+  width: 3.5rem;
+}

@@ -1,0 +1,7 @@
+const types = {
+  CREATE_NEW_GAME: 'CREATE_NEW_GAME',
+  UPDATE_CURRENT_USER: 'UPDATE_CURRENT_USER',
+  UPDATE_USER_ANSWER: 'UPDATE_USER_ANSWER'
+};
+
+export default types;
