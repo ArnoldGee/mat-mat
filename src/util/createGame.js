@@ -31,7 +31,7 @@ export default function createGame(mode, tableNumber, userName, numberOfQuestion
       number2,
       answer: 0,
       correctAnswer: modeOperations[mode](number1, number2),
-      isCorrect: false,
+      isCorrect: null,
     });
   }
 
@@ -42,6 +42,7 @@ export default function createGame(mode, tableNumber, userName, numberOfQuestion
     tableNumber, // la taula de multiplicar, altrament "null"
     numberOfQuestions, // el número de preguntes que hi ha al joc
     currentQuestion: 0, 
+    isFinished: false,
     points: 0,
     questions,
   };

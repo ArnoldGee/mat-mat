@@ -1,24 +1,30 @@
-import types from '../types'
+import types from '../types';
 
-const updateCurrentUser =(user)=>{
-  return{
-    type: types.UPDATE_CURRENT_USER,
-    payload: user
-  }
-}
-
-const createNewGame = (game) => {
+export const updateCurrentUser = (user) => {
   return {
-    type: types.CREATE_NEW_GAME, 
-    payload: game
-  }
-}
-const updateUserAnswer = (answer) => {
+    type: types.UPDATE_CURRENT_USER,
+    payload: user,
+  };
+};
+
+export const createNewGame = (game) => {
+  return {
+    type: types.CREATE_NEW_GAME,
+    payload: game,
+  };
+};
+export const updateUserAnswer = (answer) => {
   return {
     type: types.UPDATE_USER_ANSWER,
-    payload: answer
-  }
-}
+    payload: answer,
+  };
+};
+export const updateAnswerIsCorrect = (isCorrect) => ({
+  type:types.UPDATE_ANSWER_IS_CORRECT,
+  payload: isCorrect,
+})
+export const goToTheNextQuestion = () => ({
+  type: types.GO_TO_THE_NEXT_QUESTION,
+})
 
 
-export {createNewGame, updateCurrentUser, updateUserAnswer}

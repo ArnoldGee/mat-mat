@@ -2,7 +2,7 @@
 
 body {
   margin: 0px;
-  background-color: var(--black);
+  background-color: black;
 }
 *{
   font-family: 'Poppins', sans-serif;
@@ -10,7 +10,7 @@ body {
 }
 button, input {
 	background: none;
-	color: white;
+  color: white;
 	border: none;
 	font: inherit;
 	cursor: pointer;
@@ -20,6 +20,9 @@ button, input {
 
 }
 
+/***********************
+ * HANDY GLOBAL STYLES *
+ ***********************/
 
 .white {
   color: white;
@@ -31,6 +34,11 @@ button, input {
 .inline-margin {
   margin-right: 1rem;
 }
+.icon--big {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px)

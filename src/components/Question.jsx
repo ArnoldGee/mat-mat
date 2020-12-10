@@ -6,10 +6,10 @@ import './Question.css'
 
 export const Question = ({mode, number1, number2, answer, isCorrect}) => {
   const operationSymbol = modes.filter((item) => item.name === mode)[0].symbol
-
+  answer = answer === 0 ? '_' : answer
   return (
     <div className="question">
-      {number1} {operationSymbol} {number2} = {answer}
+      {number1}{operationSymbol}{number2} = {answer}
     </div>
   )
 }

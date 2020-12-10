@@ -13,11 +13,11 @@ const buttonHoverStyles = {
   scale: 1.1,
 };
 
-const Button = ({children, color, onClick, direction}) => {
+const Button = ({children, className, color, onClick, direction}) => {
   return (
     <motion.button
       onClick={onClick}
-      className={`button button--${direction}`}
+      className={`button button--${direction} ${className}`}
       whileHover={buttonHoverStyles}
       whileTap={{scale: 0.75}}
     >

@@ -7,6 +7,17 @@
   font-weight: 600;
   font-size: 4rem;
 }
+
+.number-0 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.next-question-button {
+  grid-column-start: 5;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
@@ -15,6 +26,12 @@
      font-size: 2rem;
    }
    .game-controls {
-    grid-template-columns:  repeat(auto-fill, minmax(25%, 1fr));
+    grid-template-columns:  [column-start] repeat(3, minmax(25%, 1fr)) [column-end];
    }
+   .next-question-button {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: auto;
+    grid-row-end: auto;
+  }
 }
