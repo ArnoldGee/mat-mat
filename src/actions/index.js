@@ -26,5 +26,9 @@ export const updateAnswerIsCorrect = (isCorrect) => ({
 export const goToTheNextQuestion = () => ({
   type: types.GO_TO_THE_NEXT_QUESTION,
 })
+export const archiveCurrentGame = (game) => ({
+  type: types.ARCHIVE_CURRENT_GAME,
+  payload: game,
+})
 
 

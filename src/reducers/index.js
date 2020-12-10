@@ -34,28 +34,44 @@ const gameReducer = (game = null, action) => {
 
     case types.UPDATE_ANSWER_IS_CORRECT:
       const newGame1 = {...game};
-      newGame1.questions[game.currentQuestion].isCorrect = action.payload
-      return newGame1
+      newGame1.questions[game.currentQuestion].isCorrect = action.payload;
+      return newGame1;
 
     case types.GO_TO_THE_NEXT_QUESTION:
-      if (game.currentQuestion === game.numberOfQuestions){
+      if (game.currentQuestion + 1 === game.numberOfQuestions) {
         return {
           ...game,
-          isFinished: true
-        }
+          isFinished: true,
+        };
       } else {
         return {
           ...game,
           currentQuestion: game.currentQuestion + 1,
-        }
+        };
       }
+
+    case types.ARCHIVE_CURRENT_GAME:
+      return null;
     default:
       return game;
   }
 };
 
+const gamesHistoryReducer = (state = [], { type, payload }) => {
+  switch (type) {
+
+  case types.ARCHIVE_CURRENT_GAME:
+    return [ ...state, payload ]
+
+  default:
+    return state
+  }
+}
+
+
 export default combineReducers({
   currentUser: currentUserReducer,
   users: usersReducer,
   game: gameReducer,
+  gamesHistory: gamesHistoryReducer,
 });

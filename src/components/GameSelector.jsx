@@ -1,24 +1,17 @@
 import React, {useState} from 'react';
-import {connect} from 'react-redux'
-import {
-  X,
-  ChevronLeft,
-  ChevronRight,
-  UserPlus,
-  Play,
-} from 'react-feather';
+import {connect} from 'react-redux';
+import {X, ChevronLeft, ChevronRight, UserPlus, Play} from 'react-feather';
 import randomName from 'random-name';
 
-import {modes} from '../model/modes'
-import createGame from '../util/createGame'
-import {createNewGame, updateCurrentUser} from '../actions'
-import Button from './Button'
+import {modes} from '../model/modes';
+import createGame from '../util/createGame';
+import {createNewGame, updateCurrentUser} from '../actions';
+import Button from './Button';
 import './GameSelector.css';
 
 const createRandomName = () => {
-  return randomName.first() // + ' ' + randomName.middle();
+  return randomName.first(); // + ' ' + randomName.middle();
 };
-
 
 const MAX_TABLE_NUMBER = 12;
 const NUMBER_OF_QUESTIONS = 6;
@@ -33,8 +26,13 @@ const GameSelector = ({createNewGame, updateCurrentUser}) => {
     updateCurrentUser({
       userName,
       picture: 0,
-    })
-    const newGame = createGame(modes[mode].name, tableNumber, userName, NUMBER_OF_QUESTIONS)
+    });
+    const newGame = createGame(
+      modes[mode].name,
+      tableNumber,
+      userName,
+      NUMBER_OF_QUESTIONS
+    );
     createNewGame(newGame);
   };
 
@@ -53,38 +51,35 @@ const GameSelector = ({createNewGame, updateCurrentUser}) => {
 
   return (
     <div className="game-selector">
-      <div className="type-selector">
-        <Button onClick={decrementMode}direction="left"
-        >
-          <ChevronLeft className="white" />
-        </Button>
-        <div className="type-selector__panel">{modes[mode].symbol}</div>
-        <Button
-          onClick={incrementMode}
-          direction="right"
-        >
-          <ChevronRight className="white" />
-        </Button>
+      <div
+        className="type-selector__container"
+      >
+        <label className="game-selector__label text">
+           Tria un repte
+        </label>
+        <div className="type-selector">
+          <Button onClick={decrementMode} direction="left">
+            <ChevronLeft className="white" />
+          </Button>
+          <div className="type-selector__panel">{modes[mode].symbol}</div>
+          <Button onClick={incrementMode} direction="right">
+            <ChevronRight className="white" />
+          </Button>
+        </div>
       </div>
       {modes[mode].name === 'multiply' && (
         <div
-          style={{width: '100%', display: 'flex', justifyContent: 'flex-start'}}
+        className="type-selector__container"
         >
           <label className="game-selector__label text">
-            <X className="inline-margin" /> Taula del...
+            <X className="inline-margin" /> Taula del
           </label>
           <div className="type-selector">
-            <Button
-              onClick={decrementTableNumber}
-              direction="left"
-            >
+            <Button onClick={decrementTableNumber} direction="left">
               <ChevronLeft className="white" />
             </Button>
             <div className="type-selector__panel white text">{tableNumber}</div>
-            <Button
-              onClick={incrementTableNumber}
-              direction="right"
-            >
+            <Button onClick={incrementTableNumber} direction="right">
               <ChevronRight className="white" />
             </Button>
           </div>
@@ -101,10 +96,7 @@ const GameSelector = ({createNewGame, updateCurrentUser}) => {
           onChange={(e) => setUserName(e.target.value)}
         />
 
-        <Button
-          direction="right"
-          onClick={handleSubmit}
-        >
+        <Button direction="right" onClick={handleSubmit}>
           <Play />
         </Button>
       </div>
@@ -112,4 +104,6 @@ const GameSelector = ({createNewGame, updateCurrentUser}) => {
   );
 };
 
-export default connect(undefined,{createNewGame, updateCurrentUser})(GameSelector);
+export default connect(undefined, {createNewGame, updateCurrentUser})(
+  GameSelector
+);

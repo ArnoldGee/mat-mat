@@ -1,4 +1,6 @@
 .question {
+  position: relative;
+  z-index: 3;
   font-size: 4.5rem;
   font-weight: 600;
   display: flex;

@@ -12,23 +12,26 @@ import GameSelector from './components/GameSelector';
 import GameControls from './components/GameControls';
 import QuestionMenu from './components/QuestionMenu';
 import Question from './components/Question';
+import EndGameStats from './components/EndGameStats';
 
 const App = ({game}) => {
-  let questionPanel;
-  if (game !== null) {
+  let upperBanner;
+  if (game !== null&&!game.isFinished) {
     const currentQuestion = [game.questions[game.currentQuestion]];
-    questionPanel = currentQuestion.map((question) => (
+    upperBanner = currentQuestion.map((question) => (
       <QuestionMenu key={question._id}>
         <Question />
       </QuestionMenu>
     ));
+  } else {
+    upperBanner = <Title />
   }
   return (
     <div style={{padding: '10px'}}>
       <Background />
       <UserCard />
       <AnimatePresence>
-        {game === null ? <Title /> : questionPanel}
+        {upperBanner}
       </AnimatePresence>
       <AnimatePresence exitBeforeEnter>
         {game === null ? (
@@ -37,7 +40,9 @@ const App = ({game}) => {
           </Menu>
         ) : (
           <Menu key="controls">
-            <GameControls />
+            {
+              game.isFinished ? <EndGameStats /> : <GameControls />
+            }
           </Menu>
         )}
       </AnimatePresence>

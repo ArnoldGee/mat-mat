@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;0,900;1,200;1,600;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,900;1,200;1,600;1,900&display=swap');
 
 body {
   margin: 0px;
@@ -17,7 +17,12 @@ button, input {
 	outline: inherit;
 }
 :root {
-
+  --pink: #FF08D7 ;
+  --blue: #25CED8;
+  --light-blue: #cadefc;
+  --light-blue2: #b7c9e4;
+  --purple1: #574f7d;
+  --purple2: #4f3a65;
 }
 
 /***********************
@@ -28,8 +33,16 @@ button, input {
   color: white;
 }
 .text {
-  font-size: 1.5rem;
-  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
 }
 .inline-margin {
   margin-right: 1rem;
@@ -47,3 +60,7 @@ button, input {
      font-size: 1.2rem;
    }
 }
+
+/**
+ * Colors: #FF08D7 - #25CED8 - cadefc - 574f7d - 4f3a65
+ * */
