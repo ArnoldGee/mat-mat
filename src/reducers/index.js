@@ -25,7 +25,7 @@ const gameReducer = (game = null, action) => {
       return action.payload;
 
     case types.UPDATE_USER_ANSWER:
-      if (action.payload.toString().length > 3) {
+      if (action.payload !== null && action.payload.toString().length > 3) {
         return game;
       }
       const newGame = {...game};
@@ -57,17 +57,15 @@ const gameReducer = (game = null, action) => {
   }
 };
 
-const gamesHistoryReducer = (state = [], { type, payload }) => {
+const gamesHistoryReducer = (state = [], {type, payload}) => {
   switch (type) {
+    case types.ARCHIVE_CURRENT_GAME:
+      return [...state, payload];
 
-  case types.ARCHIVE_CURRENT_GAME:
-    return [ ...state, payload ]
-
-  default:
-    return state
+    default:
+      return state;
   }
-}
-
+};
 
 export default combineReducers({
   currentUser: currentUserReducer,

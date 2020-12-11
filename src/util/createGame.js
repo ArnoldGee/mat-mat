@@ -29,7 +29,7 @@ export default function createGame(mode, tableNumber, userName, numberOfQuestion
       _id: 'question-' + uuidv4(),
       number1,
       number2,
-      answer: 0,
+      answer: null,
       correctAnswer: modeOperations[mode](number1, number2),
       isCorrect: null,
     });

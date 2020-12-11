@@ -1,0 +1,12 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  max-width: 30rem;
+  padding: 0.5rem 2.5rem;
+  clip-path: polygon(14% 0, 87% 0, 100% 100%, 0% 100%);
+  background: linear-gradient(45.34deg, #cadefc 5.66%, #d8e1ee 94.35%);
+}

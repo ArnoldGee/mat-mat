@@ -12,6 +12,10 @@
   grid-column-start: 1;
   grid-column-end: 4;
 }
+.grid-full-width {
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
 .next-question-button {
   grid-column-start: 5;
   grid-row-start: 2;

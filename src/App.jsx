@@ -13,6 +13,7 @@ import GameControls from './components/GameControls';
 import QuestionMenu from './components/QuestionMenu';
 import Question from './components/Question';
 import EndGameStats from './components/EndGameStats';
+import Footer from './components/Footer'
 
 const App = ({game}) => {
   let upperBanner;
@@ -46,6 +47,7 @@ const App = ({game}) => {
           </Menu>
         )}
       </AnimatePresence>
+      <Footer/>
     </div>
   );
 };

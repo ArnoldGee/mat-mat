@@ -16,6 +16,10 @@ button, input {
 	cursor: pointer;
 	outline: inherit;
 }
+a {
+  text-decoration: none;
+  color: var(--purple2)
+}
 :root {
   --pink: #FF08D7 ;
   --blue: #25CED8;
@@ -50,6 +54,10 @@ button, input {
 .icon--big {
   height: 3.5rem;
   width: 3.5rem;
+}
+.icon--small {
+  height: 0.8rem;
+  width: 0.8rem;
 }
 
 @media only screen 

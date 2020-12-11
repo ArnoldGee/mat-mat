@@ -21,7 +21,11 @@ const GameControls = ({
   goToTheNextQuestion,
 }) => {
   const handleNumberClick = (number) => {
-    updateUserAnswer(parseInt(`${userAnswer}${number}`));
+    if (userAnswer === null) {
+      updateUserAnswer(number);
+    } else {
+      updateUserAnswer(parseInt(`${userAnswer}${number}`));
+    }
   };
   const handleAnswerSubmit = () => {
     if (userAnswer === correctAnswer) {
@@ -49,7 +53,7 @@ const GameControls = ({
             <span className="game-controls__numbers">{number}</span>
           </Button>
         ))}
-        <Button direction={'rounded'} onClick={() => updateUserAnswer(0)}>
+        <Button direction={'rounded'} onClick={() => updateUserAnswer(null)}>
           <Delete className={'icon--big'} />
         </Button>
         <Button
@@ -64,7 +68,8 @@ const GameControls = ({
   } else if (isCorrect === true) {
     return (
       <div className="game-controls">
-        <Button direction={'rounded'} onClick={goToTheNextQuestion}>
+        
+        <Button className="grid-full-width" direction={'rounded'} onClick={goToTheNextQuestion}>
           <ChevronsRight className={'icon--big'} />
         </Button>
       </div>
@@ -72,7 +77,8 @@ const GameControls = ({
   } else if (isCorrect === false) {
     return (
       <div className="game-controls">
-        <Button direction={'rounded'} onClick={goToTheNextQuestion}>
+        <h2 className="header grid-full-width" >Resposta correcta: {correctAnswer}</h2>
+        <Button className="grid-full-width" direction={'rounded'} onClick={goToTheNextQuestion}>
           <ChevronsRight className={'icon--big'} />
         </Button>
       </div>

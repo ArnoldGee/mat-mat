@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {X, ChevronLeft, ChevronRight, UserPlus, Play} from 'react-feather';
-import randomName from 'random-name';
+
 
 import {modes} from '../model/modes';
 import createGame from '../util/createGame';
@@ -9,18 +9,16 @@ import {createNewGame, updateCurrentUser} from '../actions';
 import Button from './Button';
 import './GameSelector.css';
 
-const createRandomName = () => {
-  return randomName.first(); // + ' ' + randomName.middle();
-};
+
 
 const MAX_TABLE_NUMBER = 12;
 const NUMBER_OF_QUESTIONS = 6;
 
-const GameSelector = ({createNewGame, updateCurrentUser}) => {
+const GameSelector = ({previousUserName, createNewGame, updateCurrentUser}) => {
   const [mode, setMode] = useState(0);
   const [tableNumber, setTableNumber] = useState(2);
   // const [questionNumber, setQuestionNumber] = useState(10);
-  const [userName, setUserName] = useState(createRandomName());
+  const [userName, setUserName] = useState(previousUserName);
 
   const handleSubmit = () => {
     updateCurrentUser({
@@ -104,6 +102,10 @@ const GameSelector = ({createNewGame, updateCurrentUser}) => {
   );
 };
 
-export default connect(undefined, {createNewGame, updateCurrentUser})(
+const mapStateToProps = (state) => ({
+  previousUserName: state.currentUser ? state.currentUser.userName : 'Jugador/a'
+})
+
+export default connect(mapStateToProps, {createNewGame, updateCurrentUser})(
   GameSelector
 );
