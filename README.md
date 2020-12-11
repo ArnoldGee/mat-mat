@@ -14,10 +14,11 @@ La interfície està plantejada com una aventura pels diferents paisatges de les
 ### Futures característiques (per ordre de prioritat)
 
 1. Afegir mode de multiplicacions aleatòries
-2. Afegir diferents nivells i paisatges per enriquir l'experiència de l'usuari
-3. Afegir control per teclat, no només per ratolí
-4. Afegir sons
-5. Afegir la possibilitat d'augmentar el nombre de preguntes
+2. Afegir descàrrega de resultats en format PDF
+3. Afegir diferents nivells i paisatges per enriquir l'experiència de l'usuari
+4. Afegir control per teclat, no només per ratolí
+5. Afegir sons
+6. Afegir la possibilitat d'augmentar el nombre de preguntes
 
 Si vols proposar una característica o col·laborar en el projecte, envia'm un missatge al meu [compte de Twitter](https://twitter.com/4rnoldGee)
 
